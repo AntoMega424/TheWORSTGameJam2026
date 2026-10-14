@@ -1,10 +1,10 @@
 # README
-# [Game Title]
+# [Insert Title Here]
 [Short Game Description]
 
 ## Game info
 **Developer**: Anto Méga\
-**Title**: [Game Title]\
+**Title**: [Insert Title Here]\
 **Version**: 0.1.0\
 **Status**: In Development\
 **Release date**: TBD\
