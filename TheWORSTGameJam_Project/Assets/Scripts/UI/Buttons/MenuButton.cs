@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
-public class MenuButton : MonoBehaviour
+public class MenuButton : UIThing
 {
     private enum ButtonType
     {
         PLAY,
-        QUIT
+        QUIT,
+
+        RESPECT
     }
 
     [SerializeField] private ButtonType m_type = ButtonType.PLAY;
@@ -26,6 +29,16 @@ public class MenuButton : MonoBehaviour
 
         float offsetValue = 0.25f;
         m_scaleChangeOffset += Random.Range(-offsetValue, offsetValue);
+
+        string typeAsStr =
+            m_type
+            .ToString()
+            .ToLower()
+            .FirstCharacterToUpper();
+        string pathStart = $"Buttons/{typeAsStr}Button";
+
+        FetchSound(pathStart + "_Hover");
+        FetchSound(pathStart + "_Interact");
     }
 
     private void Update()
@@ -55,6 +68,27 @@ public class MenuButton : MonoBehaviour
     {
         Application.Quit();
     }
+    private void PayRespects()
+    {
+        Player player = FindAnyObjectByType<Player>();
+        if (player == null)
+        {
+            LogUtils.LogWarning("Wtf");
+            return;
+        }
+
+        player.PayRespects();
+        
+        Granny baba = FindAnyObjectByType<Granny>();
+        if (baba == null)
+        {
+            LogUtils.LogWarning("Where is granny ?");
+            return;
+        }
+
+        baba.AppearAsGhost();
+        Destroy(gameObject);
+    }
 
     private void OnClick()
     {
@@ -62,6 +96,7 @@ public class MenuButton : MonoBehaviour
         {
             case ButtonType.PLAY: StartGame(); break;
             case ButtonType.QUIT: QuitGame(); break;
+            case ButtonType.RESPECT: PayRespects(); break;
             default: break;
         }
     }

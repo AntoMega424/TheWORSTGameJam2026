@@ -2,6 +2,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using UnityEngine.SceneManagement;
 
 public class InputManager : MySingleton<InputManager>
 {
@@ -32,21 +33,21 @@ public class InputManager : MySingleton<InputManager>
     public Vector2 MouseDelta
     {
         get =>
-            (MouseConnected)
+            (MouseReady)
                 ? CurrentMouse.delta.ReadValue()
                 : Vector2.zero;
     }
     public Vector2 GamepadDelta_Left
     {
         get =>
-            (GamepadConnected)
+            (GamepadReady)
                 ? CurrentGamepad.leftStick.ReadValue()
                 : Vector2.zero;
     }
     public Vector2 GamepadDelta_Right
     {
         get =>
-            (GamepadConnected)
+            (GamepadReady)
                 ? CurrentGamepad.rightStick.ReadValue()
                 : Vector2.zero;
     }
@@ -133,5 +134,50 @@ public class InputManager : MySingleton<InputManager>
         {
             DontDestroyOnLoad(gameObject);
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    protected override void OnSingletonDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
+    private void OnSceneLoaded(Scene _scene, LoadSceneMode _loadSceneMode)
+    {
+        if (_scene.name == "MainMenu" || !MouseReady)
+        {
+            return;
+        }
+
+        LockAndHideCursor();
+    }
+
+
+    public void LockAndHideCursor()
+    {
+        if (!Cursor.visible)
+        {
+            return;
+        }
+
+        CurrentMouse.WarpCursorPosition(
+            0.5f
+            * new Vector2(Screen.width, Screen.height)
+        );
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    public void UnlockAndShowCursor()
+    {
+        if (Cursor.visible)
+        {
+            return;
+        }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

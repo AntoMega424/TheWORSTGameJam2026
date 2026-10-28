@@ -4,9 +4,9 @@ public class AudioManager : MySingleton<AudioManager>
 {
     public struct AudioParams
     {
-        public static readonly AudioParams s_Default = new(1f, 1f, false);
-        public static readonly AudioParams s_Music = new(1f, 1f, true);
-        public static readonly AudioParams s_Sound = new(1f, 1f, false);
+        public static readonly AudioParams s_DefaultParams = new(1f, 1f, false);
+        public static readonly AudioParams s_MusicParams = new(1f, 1f, true);
+        public static readonly AudioParams s_SoundParams = new(1f, 1f, false);
 
         public float Volume;
         public float Pitch;
@@ -124,7 +124,7 @@ public class AudioManager : MySingleton<AudioManager>
 
     public AudioSource Play2D(AudioClip _clip)
     {
-        return Play(_clip, Vector3.zero, AudioParams.s_Default, false);
+        return Play(_clip, Vector3.zero, AudioParams.s_DefaultParams, false);
     }
     public AudioSource Play2D(AudioClip _clip, AudioParams _params)
     {
@@ -133,7 +133,7 @@ public class AudioManager : MySingleton<AudioManager>
 
     public AudioSource Play3D(AudioClip _clip, Vector3 _position)
     {
-        return Play(_clip, _position, AudioParams.s_Default, true);
+        return Play(_clip, _position, AudioParams.s_DefaultParams, true);
     }
     public AudioSource Play3D(AudioClip _clip, Vector3 _position, AudioParams _params)
     {
