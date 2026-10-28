@@ -2,16 +2,18 @@
 # [Insert Title Here]
 Listen to your dead grandmother’s instructions, figure out the details she forgot to mention, and bring her back to life
 
-## Game info
+## Game infos
 **Developer**: Anto Méga\
 **Title**: [Insert Title Here]\
-**Version**: 0.1.0\
+**Version**: nbe\*1\
 **Status**: In Development\
 **Release date**: TBD\
 **Genres**:
 - Action-aventure
 - Platformer
 - Collectathon
+
+\***nbd**: **n**ot **b**ad **e**nough
 	
 ## Description
 Your grandmother is dead—but she can still give you instructions from beyond the grave\
@@ -77,3 +79,71 @@ It's free :]
 
 Please note that some things _may_ change at some point, and that there may also be more things in the final game\
 It all depends on whatever idea I have during the development
+
+## Software used/Resources
+I thought it may be of some use to indicate precisely what were the softwares and websites used to make this game, as there might probably be some people who barely know how to create games that have joined this same game jam, so it may be of use to them to know was used to make this (even though the game **is** bad, it's the point of the jam after all, there may have been ideas done here that intrigued people and so giving them the possibility to do these same things in their own way is a cool thing imo :])
+
+Note that I didn't spend a penny for all of this, not even once, in all my life thus far, adn that none is mandatory; you can do whatever you want with whatever you find as long as it supports it (_and other websites and softwares than these that can do the same things or kind of things do exist, there's a ton_)
+
+### [Game engine](https://en.wikipedia.org/wiki/Game_engine) : [Unity](https://unity.com/download) 6 to create and [build](https://en.wikipedia.org/wiki/Software_build) the game
+- [Official website](https://unity.com/)
+- [Wikipedia article](https://en.wikipedia.org/wiki/Unity_(game_engine))
+- [Asset Store page (for add-ons)](https://assetstore.unity.com/add-ons)
+- [GitHub repo](https://github.com/unity-technologies)
+- [YouTube tutorial](https://www.youtube.com/watch?v=j48LtUkZRjU&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6)
+
+### [IDE (Integrated Development Environment)](https://en.wikipedia.org/wiki/Integrated_development_environment) : [Visual Studio](https://visualstudio.microsoft.com/downloads/) 2022 to [code](https://en.wikipedia.org/wiki/Computer_programming)
+- [Official website](https://visualstudio.microsoft.com/)
+- [Wikipedia article](https://en.wikipedia.org/wiki/Visual_Studio)
+- [Marketplace page (for extensions)](https://marketplace.visualstudio.com/)
+- [YouTube tutorial](https://youtu.be/VcU2HGsxeII)
+
+### [Versioning](https://en.wikipedia.org/wiki/Version_control) : [GitHub](https://github.com/), [GitHub Desktop](https://desktop.github.com/download/) for this [repo](https://en.wikipedia.org/wiki/Repository_(version_control)) to exist
+- **GitHub**
+  - [Official website](https://github.com/)
+  - [Wikipedia article](https://en.wikipedia.org/wiki/GitHub)
+  - [Extensions page](https://github.com/collections/github-browser-extensions)
+  - [Tutorial on YouTube](https://youtu.be/a9u2yZvsqHA)
+
+- **GitHub Desktop**
+  - [Official website](https://github.com/apps/desktop)
+  - [GitHub repo](https://github.com/desktop/desktop)
+  - [YouTube tutorial](https://youtu.be/2SgI1kAczfk)
+
+### Other
+#### File editing: [Notepad++](https://notepad-plus-plus.org/downloads/) mostly to write this [README.md](https://github.com/AntoMega424/TheWORSTGameJam2026/blob/main/README.md) file but sometimes also to edit some [scripts](https://en.wikipedia.org/wiki/Scripting_language) without opening Visual Studio
+- [Official website](https://notepad-plus-plus.org/)
+- [Wikipedia article](https://en.wikipedia.org/wiki/Notepad%2B%2B)
+- [Plugins page](https://github.com/notepad-plus-plus/nppPluginList)
+- [GitHub repo](https://github.com/notepad-plus-plus/notepad-plus-plus)
+- [YouTube tutorial](https://youtu.be/iPOMj8-XN3Y)
+
+#### Music and sound search: [itch.io](https://itch.io/), [YouTube](https://www.youtube.com/) to search for sounds and musics
+  - **itch.io**
+    - [Wikipedia article](https://en.wikipedia.org/wiki/Itch.io)
+	- [Download page](https://itch.io/app)
+	- [Sound effects assets page](https://itch.io/game-assets/tag-sound-effects/tag-no-ai)
+	- [Music assets page](https://itch.io/game-assets/tag-music/tag-no-ai)
+
+  - **YouTube**
+    - [Wikipedia article](https://en.wikipedia.org/wiki/YouTube)
+
+#### [Skybox](https://en.wikipedia.org/wiki/Skybox_(video_games)) making: [Neonflames](https://29a.ch/sandbox/2011/neonflames/), [Convertio](https://convertio.co/)
+- **Neonflames** to create the image for the skybox
+  - [GitHub repo](https://github.com/jwagner/neonflames)
+
+- **Convertio** to convert that image that image from [PNG](https://en.wikipedia.org/wiki/PNG) to [HDR](https://en.wikipedia.org/wiki/High_dynamic_range#High-dynamic-range_imaging)
+
+#### Musics and sounds making: [BeepBox](https://www.beepbox.co), [Audio Recorder](https://f-droid.org/packages/com.dimowner.audiorecorder/)
+- **BeepBox** for level1, level2 and level3 musics
+  - [GitHub repo](https://github.com/johnnesky/beepbox)
+  - [Offline version](https://www.beepbox.co/beepbox_offline.html)
+  - [YouTube tutorial](https://youtu.be/_WIhhX_4M0c)
+
+- **Audio Recorder** for [SFX](https://en.wikipedia.org/wiki/Sound_effect) and the [main menu](https://en.wikipedia.org/wiki/Glossary_of_video_game_terms#Title_screen) button sounds
+   -[GitHub repo](https://github.com/Dimowner/AudioRecorder)
+
+#### [File conversion](https://en.wikipedia.org/wiki/Data_conversion) : Convertio, [FileConverter](https://github.com/Tichau/FileConverter/releases/tag/v2.2)
+- **File Converter** to convert some [JPEG](https://en.wikipedia.org/wiki/JPEG) to PNG but mainly from any audio format like [MP3](https://en.wikipedia.org/wiki/MP3) or [M4A](https://en.wikipedia.org/wiki/MP4_file_format#Filename_extensions) to [WAV](https://en.wikipedia.org/wiki/WAV) and [OGG](https://en.wikipedia.org/wiki/Ogg)
+  - [Official website](https://file-converter.io/)
+  - [GitHub repo](https://github.com/Tichau/FileConverter)

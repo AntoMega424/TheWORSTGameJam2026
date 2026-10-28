@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuButton
   m_type: 0
+  m_scaleChangeSpeed: 2
 --- !u!1 &5229523413206384676
 GameObject:
   m_ObjectHideFlags: 0
