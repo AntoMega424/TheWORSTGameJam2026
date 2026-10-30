@@ -9,6 +9,7 @@ public class Granny : MonoBehaviour
         ALIVE
     }
 
+    [SerializeField] private GameObject m_coinsZonePrefab = null;
     [SerializeField] private GameObject m_ghost = null;
     [SerializeField] private GameObject m_body = null;
     [SerializeField] private GameObject m_payRespectsButton = null;
@@ -61,17 +62,22 @@ public class Granny : MonoBehaviour
     {
         m_isPlayerClose = true;
 
-        if (!m_payRespectsButton.activeSelf)
+        if (m_payRespectsButton != null &&
+            !m_payRespectsButton.activeSelf)
         {
             m_payRespectsButton.SetActive(true);
         }
 
-        float offset = 100f;
-        m_payRespectsButton.transform.position += new Vector3(
-            Random.Range(-offset, offset),
-            Random.Range(-offset, offset),
-            0f
-        );
+        float offset = 250f;
+
+        if (m_payRespectsButton != null)
+        {
+            m_payRespectsButton.transform.position += new Vector3(
+                Random.Range(-offset, offset),
+                Random.Range(-offset, offset),
+                0f
+            );
+        }
 
         InputManager.s_Instance.UnlockAndShowCursor();
     }
@@ -96,5 +102,7 @@ public class Granny : MonoBehaviour
     {
         m_state = GrannyState.GHOST;
         m_ghost.SetActive(true);
+
+        Instantiate(m_coinsZonePrefab);
     }
 }

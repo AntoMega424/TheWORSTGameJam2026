@@ -133,17 +133,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "left",
-                    "id": "9b20943f-cce4-43a4-9e9d-f4d9789303f0",
-                    "path": "<Gamepad>/leftStick/left",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Gamepad",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "right",
                     "id": "d045bdd9-8d70-4ee0-b7d0-20f2a4599901",
                     "path": "<Gamepad>/leftStick/right",

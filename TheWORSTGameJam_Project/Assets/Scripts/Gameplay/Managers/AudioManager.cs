@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MySingleton<AudioManager>
 {
@@ -20,6 +21,10 @@ public class AudioManager : MySingleton<AudioManager>
         }
     }
 
+    [SerializeField] private AudioClip m_level1Music = null;
+    [SerializeField] private AudioClip m_level2Music = null;
+    [SerializeField] private AudioClip m_level3Music = null;
+    [Space]
     [SerializeField] private bool m_dontDestroyOnLoad = true;
     [Space]
     [SerializeField] [Range(1, 64)]
@@ -54,6 +59,31 @@ public class AudioManager : MySingleton<AudioManager>
             source.loop = false;
 
             m_sources[i] = source;
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+    protected override void OnSingletonDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene _scene, LoadSceneMode _loadSceneMode)
+    {
+        if (_scene.name.Contains("1"))
+        {
+            Play2D(m_level1Music, AudioParams.s_MusicParams);
+        }
+        else if (_scene.name.Contains("2"))
+        {
+            Play2D(m_level1Music, AudioParams.s_MusicParams);
+            //Play2D(m_level2Music, AudioParams.s_MusicParams);
+        }
+        else if (_scene.name.Contains("3"))
+        {
+            Play2D(m_level1Music, AudioParams.s_MusicParams);
+            //Play2D(m_level2Music, AudioParams.s_MusicParams);
+            //Play2D(m_level3Music, AudioParams.s_MusicParams);
         }
     }
 

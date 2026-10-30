@@ -2,13 +2,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System.Threading.Tasks;
 
 public class TextBox : MonoBehaviour
 {
     private TextMeshProUGUI m_textUI = null;
     private List<string> m_dialogLines = new();
     private int m_dialogLineIndex = 0;
-    private bool m_useAltLines = false;
+    //private bool m_useAltLines = false;
 
     private void Awake()
     {
@@ -91,20 +92,28 @@ public class TextBox : MonoBehaviour
         SayNextLine();
     }
 
-    public void UseAltLines()
-    {
-        m_useAltLines = true;
-    }
+    //public void UseAltLines()
+    //{
+    //    m_useAltLines = true;
+    //}
 
     public void SayNextLine()
     {
-        m_dialogLineIndex = Mathf.Clamp(m_dialogLineIndex + 1, 0, m_dialogLines.Count);
-        m_textUI.text = m_dialogLines[m_dialogLineIndex];
+        if (m_dialogLineIndex + 1 >= m_dialogLines.Count)
+        {
+            return;
+        }
+
+        m_textUI.text = m_dialogLines[++m_dialogLineIndex];
     }
     public void SayPreviousLine()
     {
-        m_dialogLineIndex = Mathf.Clamp(m_dialogLineIndex - 1, 0, m_dialogLines.Count);
-        m_textUI.text = m_dialogLines[m_dialogLineIndex];
+        if (m_dialogLineIndex - 1 < 0)
+        {
+            return;
+        }
+
+        m_textUI.text = m_dialogLines[--m_dialogLineIndex];
     }
 
     public void SayThisNow(string _this)
@@ -118,72 +127,81 @@ public class TextBox : MonoBehaviour
         m_dialogLines.Clear();
         m_dialogLineIndex = 0;
     }
+    public void AddLine(string _line)
+    {
+        m_dialogLines.Add(_line);
+    }
+    public void RemoveLine(string _line)
+    {
+        if (!m_dialogLines.Contains(_line))
+        {
+            LogUtils.LogInfo("u dyslexic or what ?");
+            return;
+        }
 
+        m_dialogLines.Remove(_line);
+    }
+    public void RemoveLine(int _index)
+    {
+        if (_index < 0 || _index >= m_dialogLines.Count)
+        {
+            LogUtils.LogWarning("Index out of range...");
+            return;
+        }
+
+        m_dialogLines.RemoveAt(_index);
+    }
     private void UseLevel1Lines()
     {
         ClearLinesList();
 
         // Player
-        m_dialogLines.Add("Hey Grandma ! Where are you ?");
+        _ = AddAndSayLater("Hey Grandma ! Where are you ?", Random.Range(3f, 7f));
 
         // Granny
-        m_dialogLines.Add("mhdguqscfgh (I'm buried under here)");
+        _ = AddAndSayLater("mhdguqscfgh (I'm buried under here)", Random.Range(3f, 7f));
 
         // Player
-        m_dialogLines.Add("Ah, yes, u ded, mb i forgor");
-        m_dialogLines.Add("*sobs*");
+        _ = AddAndSayLater("Ah, yes, u ded, mb i forgor", Random.Range(3f, 7f));
+        _ = AddAndSayLater("*sobs*", Random.Range(3f, 7f));
 
         // Granny
-        m_dialogLines.Add("No problem, my dear. Are you sad to see me dead ?");
+        _ = AddAndSayLater("No problem, my dear. Are you sad to see me dead ?", Random.Range(3f, 7f));
 
         // Player
-        m_dialogLines.Add("*sobs* Yes... I'd want you to undead yourself");
+        _ = AddAndSayLater("*sobs* Yes... I'd want you to undead yourself", Random.Range(3f, 7f));
 
         // Granny
-        m_dialogLines.Add("Haha! So I will, and I'll bake you some cookies !");
+        _ = AddAndSayLater("Haha! So I will, and I'll bake you some cookies !", Random.Range(3f, 7f));
 
         // Player
-        m_dialogLines.Add("*happiness noises*");
+        _ = AddAndSayLater("*happiness noises*", Random.Range(3f, 7f));
 
         // Granny
-        m_dialogLines.Add("Collect 10 coins to help me, granny needs money for cookies");
+        _ = AddAndSayLater("Collect 10 coins to help me, granny needs money for cookies", Random.Range(3f, 7f));
 
         // Player
-        m_dialogLines.Add("I'm on it !");
-
-        if (m_useAltLines)
-        {
-            m_dialogLines.Add("WOW! Grandma's gonna be rich with all that !");
-        }
-        else
-        {
-            m_dialogLines.Add("1!");
-            m_dialogLines.Add("2!");
-            m_dialogLines.Add("Three!");
-            m_dialogLines.Add("Quatro!");
-            m_dialogLines.Add("Cinco!");
-            m_dialogLines.Add("6!");
-            m_dialogLines.Add("6 7!");
-            m_dialogLines.Add("EIGHT!");
-            m_dialogLines.Add("NEIN!");
-            m_dialogLines.Add("Aaaaannnnnnd 10 !!!");
-        }
-
-        m_dialogLines.Add("Here they are, grandma !");
+        _ = AddAndSayLater("I'm on it !", Random.Range(3f, 7f));
+        _ = AddAndSayLater("Here they are, grandma !", Random.Range(3f, 7f));
 
         // Granny
-        if (m_useAltLines)
-        {
-            m_dialogLines.Add("WTF did you steal that ?!");
-            m_dialogLines.Add("No? Good. I'll bake tons of cookies for you");
-        }
-        else
-        {
-            m_dialogLines.Add("Ooohhh how sweet of you, thank you my dear !");
-        }
-
-        m_dialogLines.Add("Prepare your stomach, but first we have something else to attend to...");
+        _ = AddAndSayLater("Ooohhh how sweet of you, thank you my dear !", Random.Range(3f, 7f));
+        _ = AddAndSayLater("Prepare your stomach, but first we have something else to attend to...", Random.Range(3f, 7f));
     }
+    public async Task SayThisLater(string _this, float _laterInSeconds)
+    {
+        await Task.Delay(Mathf.CeilToInt(1000f * _laterInSeconds));
+
+        SayThisNow(_this);
+    }
+    private async Task AddAndSayLater(string _line, float _laterInSeconds)
+    {
+        await Task.Delay(Mathf.CeilToInt(1000f * _laterInSeconds));
+
+        m_dialogLines.Add(_line);
+        SayThisNow(_line);
+    }
+
     private void UseLevel2Lines()
     {
         ClearLinesList();

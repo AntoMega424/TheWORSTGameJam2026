@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf9bc4a81e392740a9abcceab35302a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  m_level1Music: {fileID: 8300000, guid: 4665fe5194e93fa468b227ba072d78ac, type: 3}
+  m_level2Music: {fileID: 8300000, guid: 118bac36a449f1a4bb9b377b6c2c7136, type: 3}
+  m_level3Music: {fileID: 8300000, guid: b153cecbab7f08c4cab4ee1d6b2862e1, type: 3}
   m_dontDestroyOnLoad: 1
-  m_poolSize: 32
+  m_poolSize: 64

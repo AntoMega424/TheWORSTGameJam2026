@@ -136,6 +136,11 @@ public class InputManager : MySingleton<InputManager>
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        CurrentMouse.WarpCursorPosition(
+            0.5f
+            * new Vector2(Screen.width, Screen.height)
+        );
     }
 
     protected override void OnSingletonDestroy()
@@ -167,8 +172,10 @@ public class InputManager : MySingleton<InputManager>
             * new Vector2(Screen.width, Screen.height)
         );
 
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
+
+        LogUtils.LogInfo("Confined", Color.orange);
     }
     public void UnlockAndShowCursor()
     {
@@ -179,5 +186,7 @@ public class InputManager : MySingleton<InputManager>
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+     
+        LogUtils.LogInfo("Unlocked");
     }
 }

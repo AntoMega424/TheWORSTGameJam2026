@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -68,6 +69,11 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext _context)
     {
+        if (Random.Range(0, 1000 + 1) == 0)
+        {
+            return;
+        }
+
         Vector2 value = _context.ReadValue<Vector2>();
         m_velocity.x = value.x;
         m_velocity.z = value.y;
@@ -77,7 +83,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext _context)
     {
-        if (!_context.canceled)
+        if (Random.Range(0, 100 + 1) == 0 || !_context.canceled)
         {
             return;
         }
@@ -94,6 +100,6 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-
+        SceneManager.LoadScene("Level2");
     }
 }

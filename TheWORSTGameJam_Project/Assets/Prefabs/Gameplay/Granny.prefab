@@ -674,9 +674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ef05bfd1bfc8c5458b28541b0218d9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Granny
+  m_coinsZonePrefab: {fileID: 7071375637740311424, guid: 38385e6647dea8f46a4158913f837c7a, type: 3}
   m_ghost: {fileID: 1941999917173442105}
   m_body: {fileID: 2314965845747183633}
   m_payRespectsButton: {fileID: 0}
+  m_groundTransform: {fileID: 0}
 --- !u!65 &4358613172108620017
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -696,5 +698,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 12.5, y: 2.5, z: 12.5}
-  m_Center: {x: 0, y: 1.25, z: 0}
+  m_Size: {x: 8, y: 2.5, z: 5}
+  m_Center: {x: 1, y: 1.25, z: 0}

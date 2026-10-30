@@ -44,9 +44,10 @@ GameObject:
   - component: {fileID: 4682786523469823031}
   - component: {fileID: 3113989942222789639}
   - component: {fileID: 2188534975706208832}
+  - component: {fileID: 5003530075293245766}
   m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,6 +164,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: f2202606-d6bd-4d12-b786-d52c663e2807
     m_ActionName: 'MainMenuCamera/ThrowBall[/Keyboard/space,/Keyboard/enter,/Mouse/rightButton,/Mouse/leftButton,/XInputControllerWindows/leftTrigger,/XInputControllerWindows/rightTrigger]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: TextBox, Assembly-CSharp
+        m_MethodName: SayNextLine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a33935d3-c914-47fc-8c58-b5c2c38e0cc4
+    m_ActionName: 'Player/AdvanceDialog[/Keyboard/backspace]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -216,6 +233,21 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.25
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &5003530075293245766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7180908979077496854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0672f8dc34bc3bf41a5d7fa91370d303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  m_playerTextUI: {fileID: 0}
+  m_health: 100
+  m_secondsUntilDeathWhenUnderTheFloor: 10
 --- !u!1 &8754881353993685077
 GameObject:
   m_ObjectHideFlags: 0
