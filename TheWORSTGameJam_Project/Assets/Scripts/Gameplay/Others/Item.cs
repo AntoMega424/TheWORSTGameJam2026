@@ -72,6 +72,8 @@ public class Item : MonoBehaviour
                 }
 
                 Player.s_coinCount += 1000000;
+                Player.SetToPlayableState();
+
                 // Player line
                 m_textBox.SayThisNow("WOW! Grandma's gonna be rich with all that !");
 

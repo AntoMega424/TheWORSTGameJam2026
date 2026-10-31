@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System.Threading.Tasks;
+using System.Collections;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +28,15 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         m_timeUntilRespawn = m_secondsUntilDeathWhenUnderTheFloor;
+
+        if (Random.Range(0, (2+1)) == 1)
+        {
+            transform.Translate(
+                Random.Range(-1f, 1f),
+                Random.Range(0f, 2f),
+                Random.Range(-0.75f, 0.25f)
+            );
+        }
     }
 
     private void Start()
@@ -34,8 +44,10 @@ public class Player : MonoBehaviour
         m_uiText = FindAnyObjectByType<TextBox>();
     }
 
-    private async Task Update()
+    private void Update()
     {
+        if (isPlayableStat){
+            m_state = PlayerState.PLAYABLE;}
         switch (m_state)
         {
             case PlayerState.TALKING:
@@ -63,13 +75,15 @@ public class Player : MonoBehaviour
 
                     if (s_coinCount >= 10 && m_thisBooleanIsFalse == false)
                     {
+                        if (objWithTransitionShader)
+                            objWithTransitionShader.SetActive(true);
+                        else
+                            LogUtils.LogWarning("Oh connaaaareuh");
+
+                            transitionToLevel2Coroutine =
+                                StartCoroutine(TransitionToLevel2());
                         m_thisBooleanIsFalse = true;
-
-                        await Task.Delay(Mathf.CeilToInt(1000f) * 5);
-
-                        // Activate weird transition camera shader here
-
-                        _ = SceneManager.LoadSceneAsync("Level2");
+                        LogUtils.LogInfo("UwU Level 2", Color.bisque);
                     }
                 }
                 break;
@@ -96,7 +110,24 @@ public class Player : MonoBehaviour
         }
     }
 
+    [SerializeField] GameObject objWithTransitionShader = null;
+    Coroutine transitionToLevel2Coroutine = null;
+    private IEnumerator TransitionToLevel2()
+    {
+        LogUtils.LogInfo("Waiting", Color.white);
+        yield return new WaitForSeconds(5f);
 
+        LogUtils.LogInfo("We should load level 2 now");
+        AsyncOperation levelLoading = SceneManager.LoadSceneAsync("Level2");
+
+        if (levelLoading.isDone)
+        StopCoroutine(transitionToLevel2Coroutine);
+    }
+    static bool isPlayableStat = false;
+    public static void SetToPlayableState()
+    {
+        isPlayableStat = true;
+    }
     public void PayRespects()
     {
 

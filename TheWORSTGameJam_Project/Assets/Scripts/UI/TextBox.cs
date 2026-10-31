@@ -155,38 +155,82 @@ public class TextBox : MonoBehaviour
     {
         ClearLinesList();
 
-        // Player
-        _ = AddAndSayLater("Hey Grandma ! Where are you ?", Random.Range(3f, 7f));
-
-        // Granny
-        _ = AddAndSayLater("mhdguqscfgh (I'm buried under here)", Random.Range(3f, 7f));
-
-        // Player
-        _ = AddAndSayLater("Ah, yes, u ded, mb i forgor", Random.Range(3f, 7f));
-        _ = AddAndSayLater("*sobs*", Random.Range(3f, 7f));
-
-        // Granny
-        _ = AddAndSayLater("No problem, my dear. Are you sad to see me dead ?", Random.Range(3f, 7f));
+        float delay =new();
+        float oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
 
         // Player
-        _ = AddAndSayLater("*sobs* Yes... I'd want you to undead yourself", Random.Range(3f, 7f));
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("Hey Grandma ! Where are you ?", delay);
 
         // Granny
-        _ = AddAndSayLater("Haha! So I will, and I'll bake you some cookies !", Random.Range(3f, 7f));
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("mhdguqscfgh (I'm buried under here)", delay);
+        
+        // Player
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("Ah, yes, u ded, mb i forgor", delay);
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("*sobs*", delay);
+
+        // Granny
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("No problem, my dear. Are you sad to see me dead ?", delay);
 
         // Player
-        _ = AddAndSayLater("*happiness noises*", Random.Range(3f, 7f));
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("*sobs* Yes... I'd want you to undead yourself", delay);
 
         // Granny
-        _ = AddAndSayLater("Collect 10 coins to help me, granny needs money for cookies", Random.Range(3f, 7f));
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("Haha! So I will, and I'll bake you some cookies !", delay);
+        
+        // Player
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("*happiness noises*", delay);
+        
+        // Granny
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("Collect 10 coins to help me, granny needs money for cookies", delay);
 
         // Player
-        _ = AddAndSayLater("I'm on it !", Random.Range(3f, 7f));
-        _ = AddAndSayLater("Here they are, grandma !", Random.Range(3f, 7f));
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("I'm on it !", delay);
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("Here they are, grandma !", delay);
 
         // Granny
-        _ = AddAndSayLater("Ooohhh how sweet of you, thank you my dear !", Random.Range(3f, 7f));
-        _ = AddAndSayLater("Prepare your stomach, but first we have something else to attend to...", Random.Range(3f, 7f));
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("Ooohhh how sweet of you, thank you my dear !", delay);
+        oldDelay = delay;
+        delay += 0.75f + Random.Range(-0.5f, 5f);
+        delay = (Mathf.Clamp(delay, oldDelay + 1f, delay));
+        _ = AddAndSayLater("Prepare your stomach, but first we have something else to attend to...", delay);
     }
     public async Task SayThisLater(string _this, float _laterInSeconds)
     {

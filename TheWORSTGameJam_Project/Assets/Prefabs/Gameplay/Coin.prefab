@@ -141,4 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a85da82295f75eb4e88f7d30dc928954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SunRotation
-  rotationVitesse: 0.5
+  rotationVitesse: 60
