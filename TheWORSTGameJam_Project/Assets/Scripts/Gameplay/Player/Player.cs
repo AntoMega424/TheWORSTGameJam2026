@@ -3,6 +3,19 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using System.Threading.Tasks;
 using System.Collections;
+using UnityEngine.InputSystem;
+
+public static class StringWithAnAdditionalFeature
+{
+    public static bool DoesNotEndWith(this string self, char _compared)
+    {
+        return self.EndsWith(_compared) == false;
+    }
+    public static bool DoesNotEndWith(this string self, string _compared)
+    {
+        return self.EndsWith(_compared) == false;
+    }
+}
 
 public class Player : MonoBehaviour
 {
@@ -46,6 +59,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
+
         if (isPlayableStat){
             m_state = PlayerState.PLAYABLE;}
         switch (m_state)
@@ -131,5 +145,24 @@ public class Player : MonoBehaviour
     public void PayRespects()
     {
 
+    }
+    void FixedUpdate()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (GetComponent<PlayerInput>().enabled)
+        {
+            if (SceneManager.GetActiveScene().name.EndsWith('2'))
+            {
+                GetComponent<PlayerInput>().enabled = false;
+            }
+        }
+        else if (!GetComponent<PlayerInput>().enabled)
+        {
+            if (SceneManager.GetActiveScene().name.DoesNotEndWith('2'))
+            {
+                GetComponent<PlayerInput>().enabled = true;
+            }
+        }
     }
 }

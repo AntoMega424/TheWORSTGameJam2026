@@ -58,7 +58,7 @@
                 {
                     "name": "up",
                     "id": "faac0817-e1a3-446f-8315-0913a2727250",
-                    "path": "<Keyboard>/w",
+                    "path": "<Keyboard>/h",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -69,7 +69,7 @@
                 {
                     "name": "down",
                     "id": "cda6fcc6-c89d-4d3f-bbb9-bf6cf74831c3",
-                    "path": "<Keyboard>/s",
+                    "path": "<Keyboard>/b",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -80,7 +80,7 @@
                 {
                     "name": "left",
                     "id": "8ca6c20b-8149-4040-a8e2-ef30fd8afa16",
-                    "path": "<Keyboard>/a",
+                    "path": "<Keyboard>/g",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -113,7 +113,7 @@
                 {
                     "name": "up",
                     "id": "ced50e73-c986-4716-a1c3-4ce173f13152",
-                    "path": "<Gamepad>/leftStick/up",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -124,7 +124,7 @@
                 {
                     "name": "down",
                     "id": "54562dd2-7688-4c38-a53c-eadf47d4bdb0",
-                    "path": "<Gamepad>/leftStick/down",
+                    "path": "<Gamepad>/dpad/x",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -135,7 +135,7 @@
                 {
                     "name": "right",
                     "id": "d045bdd9-8d70-4ee0-b7d0-20f2a4599901",
-                    "path": "<Gamepad>/leftStick/right",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -146,7 +146,7 @@
                 {
                     "name": "",
                     "id": "17e55d0a-307d-4cba-a73a-55d6049dfc25",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/tab",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard",
@@ -157,7 +157,7 @@
                 {
                     "name": "",
                     "id": "e7bdcd88-5b2a-4613-b420-1f40b1ed1bb7",
-                    "path": "<Gamepad>/buttonSouth",
+                    "path": "<Gamepad>/rightStickPress",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",
@@ -232,6 +232,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "CrashGame",
+                    "type": "Button",
+                    "id": "8f444cd0-5512-46e1-84fb-e36ed540ff28",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -432,6 +441,67 @@
                     "action": "ThrowBall",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "42ff3f9e-0eb8-47b9-b64e-72942271838e",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "CrashGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c6661f2e-907a-4f63-884a-90d1e500ffe5",
+                    "path": "<Mouse>/middleButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Mouse",
+                    "action": "CrashGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1964833c-bc08-4e3f-bfa9-f77d37cf79c5",
+                    "path": "<Gamepad>/start",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "CrashGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Level2",
+            "id": "adfa89ca-81e0-477c-82ce-c45731f860af",
+            "actions": [
+                {
+                    "name": "HastenLevel3Loading",
+                    "type": "Button",
+                    "id": "797e822c-faf1-4a4a-a863-3e2765475d19",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c1349ecf-6602-4d62-9cb1-d176c721efd6",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard",
+                    "action": "HastenLevel3Loading",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

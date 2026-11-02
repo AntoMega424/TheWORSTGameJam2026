@@ -353,8 +353,8 @@ MonoBehaviour:
   m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
+  m_StopNaN: 1
+  m_Dithering: 1
   m_ClearDepth: 1
   m_AllowXRRendering: 1
   m_AllowHDROutput: 1
@@ -365,7 +365,7 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_TaaSettings:
     m_Quality: 3
-    m_FrameInfluence: 0.1
+    m_FrameInfluence: 0.100000024
     m_JitterScale: 1
     m_MipBias: 0
     m_VarianceClampScale: 0.9
@@ -467,6 +467,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: a33935d3-c914-47fc-8c58-b5c2c38e0cc4
     m_ActionName: 'Player/AdvanceDialog[/Keyboard/backspace]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 330585548}
+        m_TargetAssemblyTypeName: PlayerViewController, Assembly-CSharp
+        m_MethodName: OnCrashGame
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 8f444cd0-5512-46e1-84fb-e36ed540ff28
+    m_ActionName: 'MainMenuCamera/CrashGame[/Keyboard/anyKey,/Mouse/middleButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: MainMenuCamera
@@ -1542,6 +1558,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1212671656}
     m_Modifications:
+    - target: {fileID: 1126123841831110859, guid: 5acbc330e5546fd42b3c6795d25742b8, type: 3}
+      propertyPath: m_type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1459296322870874556, guid: 5acbc330e5546fd42b3c6795d25742b8, type: 3}
       propertyPath: m_Name
       value: OrNotToPlayButton
@@ -2300,6 +2320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1212671656}
     m_Modifications:
+    - target: {fileID: 1126123841831110859, guid: 5acbc330e5546fd42b3c6795d25742b8, type: 3}
+      propertyPath: m_type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1126123841831110859, guid: 5acbc330e5546fd42b3c6795d25742b8, type: 3}
       propertyPath: m_scaleChangesPerSecond
       value: 1

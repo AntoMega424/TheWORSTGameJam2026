@@ -43,7 +43,7 @@ PlayerSettings:
   - logo: {fileID: 10404, guid: 0000000000000000f000000000000000, type: 0}
     duration: 2
   - logo: {fileID: 21300000, guid: 11911464da29ae14e9b438d88d9ba1d7, type: 3}
-    duration: 5
+    duration: 4
   m_VirtualRealitySplashScreen: {fileID: 2800000, guid: 3bf04b1601077df43b0f98225f078a89, type: 3}
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
@@ -147,7 +147,7 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: nbe3
+  bundleVersion: gamejam
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   metroInputSource: 0

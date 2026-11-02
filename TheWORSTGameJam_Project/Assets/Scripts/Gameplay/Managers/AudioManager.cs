@@ -76,14 +76,17 @@ public class AudioManager : MySingleton<AudioManager>
         }
         else if (_scene.name.Contains("2"))
         {
+            if (Random.Range(0, 8) == 0)
             Play2D(m_level1Music, AudioParams.s_MusicParams);
-            //Play2D(m_level2Music, AudioParams.s_MusicParams);
+            Play2D(m_level2Music, AudioParams.s_MusicParams);
         }
         else if (_scene.name.Contains("3"))
         {
+            if (Random.Range(0, 9) == 0)
             Play2D(m_level1Music, AudioParams.s_MusicParams);
-            //Play2D(m_level2Music, AudioParams.s_MusicParams);
-            //Play2D(m_level3Music, AudioParams.s_MusicParams);
+            if (Random.Range(0, 18) == 0)
+            Play2D(m_level2Music, AudioParams.s_MusicParams);
+            Play2D(m_level3Music, AudioParams.s_MusicParams);
         }
     }
 

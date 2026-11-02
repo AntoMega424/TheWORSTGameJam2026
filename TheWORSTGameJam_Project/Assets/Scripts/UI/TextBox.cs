@@ -23,6 +23,39 @@ public class TextBox : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneChanged;
     }
 
+    float deathTimer=0;
+    bool condition = false;
+    private void Update()
+    {
+        deathTimer += Time.deltaTime;
+
+        if (((int)(deathTimer)) % 0 == 0)
+        {
+            SayThisNow($"{(60f - deathTimer).ToString()}");
+        }
+
+        if (condition == false)
+        {
+            if (deathTimer > 59f)
+            {
+                SayThisNow("Oh nooooooooo !");
+                deathTimer = 0f;
+                condition = true;
+            }
+        }
+        else if (condition)
+        {
+            if (deathTimer > 2f)
+            {
+                SayThisNow("Gioodbye dear, I love yopu");
+            }
+            if (deathTimer > (float)5.5)
+            {
+                SayThisNow("GG go next");
+                Application.Quit();
+            }
+        }
+    }
 
     private void OnSceneChanged(Scene _scene, LoadSceneMode _loadSceneMode)
     {
@@ -257,6 +290,15 @@ public class TextBox : MonoBehaviour
     {
         ClearLinesList();
 
+        float delay = 5f;
 
+        _ = AddAndSayLater("My dear, I'm alive !", delay);
+        delay += 5f;
+
+        _ = AddAndSayLater("You saved me! :D", delay);
+        delay += 5f;
+
+        _ = AddAndSayLater("Here, take these cookies, but don't eat too much\nor something bad will happen", delay);
+        delay += 5f;
     }
 }

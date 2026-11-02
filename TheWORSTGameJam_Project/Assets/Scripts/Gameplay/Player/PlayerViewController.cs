@@ -1,7 +1,8 @@
+//using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-
+using System.Collections.Generic;
 public class PlayerViewController : MonoBehaviour
 {
     [SerializeField] private Transform m_pivotTransform = null;
@@ -31,7 +32,7 @@ public class PlayerViewController : MonoBehaviour
 
         SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
-
+    float musicTimer = 0f;
     private void Start()
     {
         if (m_pivotTransform == null)
@@ -75,10 +76,58 @@ public class PlayerViewController : MonoBehaviour
             m_camera.fieldOfView += Time.deltaTime * m_zoomSpeed * m_zoomValue;
             m_camera.fieldOfView = Mathf.Clamp(m_camera.fieldOfView, 1f, 179f);
         }
+
+        
     }
 
+    int priorty = 1;
+    int musicCount = 0;
     private void LateUpdate()
     {
+        if (musicCount < 50 && 1f / Time.fixedUnscaledDeltaTime < 20)
+        {
+
+        musicTimer += Time.deltaTime;
+
+        if (musicTimer > 10f + Random.Range(-1f, 1f))
+        {
+            musicCount++;
+            AudioSource music = gameObject.AddComponent<AudioSource>();
+            music.clip = m_mainMenuMusic;
+            music.pitch = Random.Range(0.1f, 1.9f);
+            music.volume = 1f;
+            music.spatialize = true;
+            music.spatialBlend = 1f;
+            music.spread = Random.Range(0f, 360f);
+            music.priority = priorty++;
+            music.panStereo = Random.Range(-1f, 1f);
+            music.loop = true;
+                //music.gamepadSpeakerOutputType = (GamepadSpeakerOutputType)Random.Range(0, 4);
+            music.dopplerLevel = Random.Range(0f, 1f);
+            music.transform.position = transform.position +
+                5f * new Vector3()
+                                  .Random();
+
+            int i = 0;
+            float doppler = music.dopplerLevel;
+            while (i < Random.Range(1000f, 12500f))
+            {
+                music.dopplerLevel = Random.Range(0f, 1f);
+                music = music;
+                i++;
+            }
+            music.dopplerLevel = doppler;
+            music.Play();
+                //if (InputManager.s_Instance.GamepadReady && Random.Range(0, 10) == 0)
+                //{
+                //    music.PlayOnGamepad(0);
+                //}
+
+            LogUtils.LogInfo("Music Menu ++");
+            musicTimer = 0f;
+        }
+        }
+
         if (m_pivotTransform == null)
         {
             return;
@@ -138,7 +187,46 @@ public class PlayerViewController : MonoBehaviour
             m_distanceFromPivotCpy = m_distanceFromPivot;
         }
     }
+    public enum ExitCode
+    {
+        VOLUNTARY = -1
+    }
+    public void OnCrashGame(InputAction.CallbackContext _context)
+    {
+        if (_context.canceled)
+        {
+            // Doesn't work but I leave it cuz it's stupid then
+            Keyboard current = InputManager.s_Instance.CurrentKeyboard;
 
+            if (current != null && _context.control.device == current)
+            {
+                if (_context.control == current.spaceKey ||
+                    _context.control == current.enterKey)
+                {
+                    return;
+                }
+            }
+
+            Application.Quit(((int)(ExitCode.VOLUNTARY)));
+            LogUtils.LogInfo("Error: An expected error has occurred.");
+        }
+    }
+
+    public static int ConvertExitCodeToInt(ExitCode _exitCodeAsExitCode)
+    {
+        return (int)_exitCodeAsExitCode;
+    }
+    public static ExitCode FromIntToExitCode(int _int)
+    {
+        if (_int != -1)
+        {
+            LogUtils.LogWarning($"Error: Exit code '{_int}' doesn't exist, you dum dum");
+        }
+        else
+        {
+        }
+        return ExitCode.VOLUNTARY;
+    }
 
     private void OnSceneUnloaded(Scene _scene)
     {
@@ -192,7 +280,7 @@ public class PlayerViewController : MonoBehaviour
 
         Ball ball = Instantiate(
             original: m_ballPrefab,
-            position: transform.position + 2f * transform.forward,
+            position: transform.position + 2f * transform.forward + 0.5f * new Vector3().Random(),
             rotation: Quaternion.identity
         ).GetComponent<Ball>();
         ball.Throw(

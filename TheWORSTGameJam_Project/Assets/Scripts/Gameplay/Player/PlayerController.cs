@@ -100,6 +100,14 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        SceneManager.LoadScene("Level2");
+        string scnm = SceneManager.GetActiveScene().name;
+        switch (scnm)
+        {
+            case "Level1":
+                SceneManager.LoadScene("Level2"); break;
+            case "Level2":
+        SceneManager.LoadScene($"Level{(Random.Range(0, 3) + 1).ToString()}"); break;
+            default: Application.Quit((int)PlayerViewController.ExitCode.VOLUNTARY); break;
+        }
     }
 }
