@@ -5,7 +5,7 @@ Listen to your dead grandmother’s instructions, figure out the details she for
 ## Game infos
 **Developer**: Anto Méga\
 **Title**: [Insert Title Here]\
-**Version**: nbe\*1\
+**Version**: nbe\*3\
 **Status**: In Development\
 **Release date**: TBD\
 **Genres**:
@@ -56,7 +56,7 @@ You can throw various projectiles at the demon during the bossfight to inflict d
 Your grandma's now alive again !\
 She'll bake you cookies as usual, and advise you to eat them slowly, but you'll eat them as quickly as possible anyway and fucking die of excitement as these cookies were too damn good
 
-This will make granny sad, so you'll have to run away from her as she transformed into Ball Granny and is rolling towards you, breaking trees and throwing cows and pigs away if they're in her way, with the only escape being to possess her and make her eat a cookie to go back in time in the level 1 but with both of you alive, hug her, then dance with Shrek and Donkey with [Shreksophone](https://www.youtube.com/watch?v=W2dxblz6m54) playing, before a nuclear explosion happens somewhere in the distance
+This will make granny sad, so you'll have to run away from her as she transformed into Ball Granny and is rolling towards you, breaking trees and throwing cows and pigs away if they're in her way, with the only escape being to possess her and make her eat a cookie to go back in time in the level 1 but with both of you alive, hug her, then dance with Shrek and Donkey with [Shreksophone](https://youtu.be/W2dxblz6m54) playing, before a nuclear explosion happens somewhere in the distance
 
 ---
 
@@ -118,7 +118,7 @@ Note that I didn't spend a penny for all of this, not even once, in all my life 
 - [GitHub repo](https://github.com/notepad-plus-plus/notepad-plus-plus)
 - [YouTube tutorial](https://youtu.be/iPOMj8-XN3Y)
 
-#### Music and sound search: [itch.io](https://itch.io/), [YouTube](https://www.youtube.com/) to search for sounds and musics
+#### Music and sound search: [itch.io](https://itch.io/), [YouTube](https://www.youtube.com/) to search for sounds and musics, [OpenVideoDownloader (youtube-dl-gui)](https://github.com/StefanLobbenmeier/youtube-dl-gui) specifically to fetch the [Shreksphone](https://youtu.be/W2dxblz6m54) music by [hotdogster](https://www.youtube.com/@hotdogster) on YouTube
   - **itch.io**
     - [Wikipedia article](https://en.wikipedia.org/wiki/Itch.io)
 	- [Download page](https://itch.io/app)
@@ -128,14 +128,17 @@ Note that I didn't spend a penny for all of this, not even once, in all my life 
   - **YouTube**
     - [Wikipedia article](https://en.wikipedia.org/wiki/YouTube)
 
+  - **OpenVideoDownloader (youtube-dl-gui)**
+    - [Wikipedia article of the technology it's based on (youtube-dl)](https://en.wikipedia.org/wiki/Youtube-dl)
+
 #### [Skybox](https://en.wikipedia.org/wiki/Skybox_(video_games)) making: [Neonflames](https://29a.ch/sandbox/2011/neonflames/), [Convertio](https://convertio.co/)
 - **Neonflames** to create the image for the skybox
   - [GitHub repo](https://github.com/jwagner/neonflames)
 
 - **Convertio** to convert that image that image from [PNG](https://en.wikipedia.org/wiki/PNG) to [HDR](https://en.wikipedia.org/wiki/High_dynamic_range#High-dynamic-range_imaging)
 
-#### Musics and sounds making: [BeepBox](https://www.beepbox.co), [Audio Recorder](https://f-droid.org/packages/com.dimowner.audiorecorder/)
-- **BeepBox** for level1, level2 and level3 musics
+#### Musics and sounds making: [BeepBox](https://www.beepbox.co), [Audio Recorder](https://f-droid.org/packages/com.dimowner.audiorecorder/), and [aimusic.so](https://aimusic.so/) only to generate the [MainMenu](https://github.com/AntoMega424/TheWORSTGameJam2026/blob/main/TheWORSTGameJam_Project/Assets/Audio/Musics/MainMenu/MenuMusic.mp3) music
+- **BeepBox** for [Level1](and [aimusic.s](https://aimusic.so/) only to generate the [MainMenu music](https://github.com/AntoMega424/TheWORSTGameJam2026/blob/main/TheWORSTGameJam_Project/Assets/Audio/Musics/Level1/Level1.ogg)), [Level2](https://github.com/AntoMega424/TheWORSTGameJam2026/blob/main/TheWORSTGameJam_Project/Assets/Audio/Musics/Level2/Level2.ogg) and [Level3](https://github.com/AntoMega424/TheWORSTGameJam2026/blob/main/TheWORSTGameJam_Project/Assets/Audio/Musics/Level3/Level3.ogg) musics
   - [GitHub repo](https://github.com/johnnesky/beepbox)
   - [Offline version](https://www.beepbox.co/beepbox_offline.html)
   - [YouTube tutorial](https://youtu.be/_WIhhX_4M0c)
