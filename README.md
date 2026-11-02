@@ -5,15 +5,13 @@ Listen to your dead grandmother’s instructions, figure out the details she for
 ## Game infos
 **Developer**: Anto Méga\
 **Title**: [Insert Title Here]\
-**Version**: nbe\*3\
-**Status**: In Development\
-**Release date**: TBD\
+**Version**: gamejam\
+**Status**: Released\
+**Release date**: 02/11/2026\
 **Genres**:
 - Action-aventure
 - Platformer
 - Collectathon
-
-\***nbd**: **n**ot **b**ad **e**nough
 	
 ## Description
 Your grandmother is dead—but she can still give you instructions from beyond the grave\
@@ -30,10 +28,10 @@ See [CONTROLS.md](https://github.com/aanterieux/TheWORSTGameJam2026/blob/main/CO
 Unless otherwise stated, the original source code in this repository is licensed under the [**MIT License**](https://github.com/aanterieux/TheWORSTGameJam2026/?tab=MIT-1-ov-file). See [LICENSE](https://github.com/aanterieux/TheWORSTGameJam2026/blob/main/LICENSE).\
 
 ## Generative AI use disclaimer
-Except for the two descriptions above, **no AI** has been used
+Except for the two descriptions above, and for the [MainMenu music](https://github.com/AntoMega424/TheWORSTGameJam2026/TheWORSTGameJam_Project/Assets/Audio/Musics/MainMenu/MenuMusic.mp3), **no AI** has been used
 
 ## Long ass description
-This is a straight-up copy-paste of [my comment](https://www.reddit.com/r/gamedev/comments/1xbkruv/comment/pi0bl45/) on [this Reddit post](https://www.reddit.com/r/gamedev/comments/1xbkruv/give_me_the_most_stupidest_ideas_to_make_a_game/) (*with a couple changes in the formatting*)
+(This is a straight-up copy-paste of [my comment](https://www.reddit.com/r/gamedev/comments/1xbkruv/comment/pi0bl45/) on [this Reddit post](https://www.reddit.com/r/gamedev/comments/1xbkruv/give_me_the_most_stupidest_ideas_to_make_a_game/) (*with a couple changes in the formatting*))
 
 ---
 
@@ -60,18 +58,18 @@ This will make granny sad, so you'll have to run away from her as she transforme
 
 ---
 
-These are the ideas for a game I'm currently making for the [The WORST Game Jam](https://itch.io/jam/your-worst-ideas) by [gamedesignaccount](https://gamedesignaccount.itch.io/) game jam on [itch.io](https://itch.io/)  
-They make this to raise money for a local school, with the target amount being $**1 000** through donations [here](https://gofund.me/b1397555e)\
+These are the ideas for this game I made for the [The WORST Game Jam](https://itch.io/jam/your-worst-ideas) by [gamedesignaccount](https://gamedesignaccount.itch.io/) game jam on [itch.io](https://itch.io/) (*I'll keep working on it so that there will 1. be a version with every above-mentioned feature and 2. a clean, playable version with overall better UX (no more exaggerated annoyances)*)  
+They do this to raise money for a local school, with the target amount being $**1 000** through donations [here](https://gofund.me/b1397555e)\
 I donated before it started, I think was the first one to donate actually (*though I'm not absolutely sure about that as I forgot what was written on the page lol*), and know that to donate or not do not affect the final ratings, nor is it mandatory,; but it's always a **cool** thing **to do**
-Currently we are **570** participants :]\
-Plus there are prizes for the three winners:
+We were around **570** participants at the time of the jam's end and there have been **139** entries including mine :]\
+Plus there are **prizes** for the five best-rated of all:
 - **1st**: $**150** Amazon gift card
 - **2nd**: $**100** Amazon gift card
-- **3rd**: $**50** Amazon gift card
-(*All the dollars here are US dollars*)
+- **3rd**, **4th** and **5th**: $**50** Amazon gift card
+(*All the dollars here are **US** dollars*)
 
 So here it is, do whatever you want with it, I will do a version of these ideas (*a voluntarily bad version as it's the whole point of the jam-to make a shite game*)\
-You can even **use my code** or whole **Unity project** [here on my GitHub](https://github.com/aanterieux/TheWORSTGameJam2026) if you want to, it's public for that reason, just know that the code will probably be bad and that there will be bugs left on purpose as I'm trying to make something playable yet horrendous to play\
+You can even **use my code** or whole **Unity project** [here](https://github.com/aanterieux/TheWORSTGameJam2026) if you want to, it's public for that reason, just know that the code will probably be bad and that there will be bugs left on purpose as I'm trying to make something playable yet horrendous to play\
 There will be multiple updates in the near future, each with their respective build, before the jam's end\
 It's free :]
 
